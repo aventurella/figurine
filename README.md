@@ -16,3 +16,43 @@ need a factory function to start them off with defaults of your choosing.
 
 The base of a figuerine object is a dict, which is a bit better, for my need, for 
 JSON serialization if needed.
+
+
+### Using Figurine
+
+```python
+import figurine
+
+class FacebookData(figurine.Model):
+    def __init__(self):
+        self.posts = ['facebook']
+
+class TwitterData(figurine.Model):
+    def __init__(self):
+            self.tweets = ['twitter']
+
+class SocialData(FacebookData, TwitterData):
+    pass
+
+class SimplePage(figurine.Model):
+    
+    def __init__(self):
+        self.title = ""
+        self.stylesheets = []
+        self.javascript = []
+        self.meta = {}
+        self.value = 1
+
+class HomePage(SimplePage, SocialData):
+    
+    def __init__(self):
+        self.username = "lucy_the_dog"
+
+model1 = HomePage()
+print(model.tweets)
+
+# kwarg overrides or init
+model2 = HomePage(title="My Great Title",
+                  value=2)
+
+```
