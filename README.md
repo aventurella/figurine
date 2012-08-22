@@ -18,7 +18,8 @@ It still may be that namedtuples are a better solution, though you may
 need a factory function to start them off with defaults of your choosing.
 
 The base of a figuerine object is a dict, which is a bit better, for my need, for 
-JSON serialization if needed.
+JSON serialization if needed, which you could also just do with namedtuple._asdict
+if you really wanted to use a namedtuple.
 
 
 ### Using Figurine
