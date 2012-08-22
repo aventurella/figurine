@@ -8,7 +8,7 @@ does nothing but represent data.
 
 Currently run on Python 2.6+, 3.x will be supported shortly.
 
-** What about namedtuples? **
+**What about namedtuples?**
 
 Yes, you could just use namedtuple for this, and that might even be better.
 If you want your model defs to look more like traditional python objects however,
