@@ -53,9 +53,12 @@ class HomePage(SimplePage, SocialData):
 
 model1 = HomePage()
 print(model.tweets)
+# {'username': 'lucy_the_dog', 'title': '', 'javascript': [], 'posts': ['facebook'], 'value': 1, 'stylesheets': [], 'meta': {}, 'tweets': ['twitter']}
 
 # kwarg overrides or init
 model2 = HomePage(title="My Great Title",
                   value=2)
 
+print(model2)
+# {'username': 'lucy_the_dog', 'title': 'My Great Title', 'javascript': [], 'posts': ['facebook'], 'value': 2, 'stylesheets': [], 'meta': {}, 'tweets': ['twitter']}
 ```
