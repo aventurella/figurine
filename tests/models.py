@@ -1,14 +1,19 @@
-from figurine import Model
+import figurine
 
-class SocialData(Model):
+class FacebookData(figurine.Model):
     def __init__(self):
-        print('social')
-        self.tweets = ['1']
+        self.posts = ['facebook']
 
-class SimplePage(Model):
+class TwitterData(figurine.Model):
+    def __init__(self):
+            self.tweets = ['twitter']
+
+class SocialData(FacebookData, TwitterData):
+    pass
+
+class SimplePage(figurine.Model):
     
     def __init__(self):
-        print('simple')
         self.title = ""
         self.stylesheets = []
         self.javascript = []
@@ -18,13 +23,20 @@ class SimplePage(Model):
 class HomePage(SimplePage, SocialData):
     
     def __init__(self):
-        print('home')
         self.username = "lucy_the_dog"
 
 
 class HomePageLoggedIn(HomePage):
     
     def __init__(self):
-        print('loggedin')
         self.status = "logged in"
-        self.tweets = [3]
+
+
+class FancyPage(HomePageLoggedIn):
+    
+    def __init__(self):
+        self.status = "logged out"
+        self.posts = [1,2]
+        self.tweets = [2,3]
+        self.javascript = ['jquery']
+        self.title = "fancy"
