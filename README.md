@@ -4,7 +4,9 @@
 
 Figurine is intended for dumb models. In other words, data only, no methods.
 For web apps, view models come to mind, or anywhere you would like a model that
-does nothing but represent data. 
+does nothing but represent data.
+
+Currently run on Python 2.6+, 3.x will be supported shortly.
 
 ** What about namedtuples? **
 Yes, you could just use namedtuple for this, and that might even be better.
